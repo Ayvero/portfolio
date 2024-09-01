@@ -5,9 +5,23 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary-font: 'Libre Baskerville', serif;
+    --secondary-font: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: var(--primary-font);
+}
+
+h1, h2, h3 {
+    font-family: var(--secondary-font);
+}
+
+
 /* Estilos generales */
 body {
-    font-family: cardana;
+    
     line-height: 1.6;
     background: radial-gradient(circle at top left, #221a72, #737373, #000000);
     color: #fff;
@@ -103,23 +117,33 @@ header {
 
 
 .presentacion h1 {
-    font-size: 5em; 
-    font-family: 'Great Vibes', cursive;
+    font-size: 4em; 
+    font-family: var(--primary-font);
     /*margin-bottom: 2rem;*/
     margin-top: 3rem;
     color: #ffdd57;
+
 }
 
 .presentacion h2 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 3rem;
+    font-family: var(--secondary-font);
+    font-size: 1.5rem;
     margin-bottom: 1rem;
     color: #fff;
+    text-align: right;
+    
+}
+.presentacion h3 {
+    font-family: var(--secondary-font);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    text-align: right;
     
 }
 
 .presentacion p {
-    font-size: 18px;
+    font-size: 1rem;
     line-height: 1.6;
 }
 
@@ -221,16 +245,18 @@ header {
 
     .presentacion h1 {
         font-size: 2rem; /* Reduce el tamaño del texto */
+        text-align: center;
         
     }
     .presentacion h2 {
         font-size: 1rem; /* Reduce el tamaño del texto */
+        text-align: center;
         
     }
 
     .presentacion h3 {
         font-size: 1rem; /* Reduce el tamaño del texto */
-        margin-bottom: 5rem;
+        margin-top: 0.5rem;
     }
 
     .profile-pic {
@@ -706,10 +732,10 @@ h3 {
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
-    -webkit-border-radius:;
-    -moz-border-radius:;
-    -ms-border-radius:;
-    -o-border-radius:;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
     -webkit-transition: background-color 0.3s ease;
     -moz-transition: background-color 0.3s ease;
     -ms-transition: background-color 0.3s ease;
@@ -717,8 +743,11 @@ h3 {
 }
 
 .btn:hover {
+    
+    color:#221a72;
     background-color: #ffdd57;
-    color: #000;
+    
+
 }
 
 .skills-list {
@@ -903,9 +932,156 @@ footer {
     }
 }
 
+/*------------------otros proyectos--------------------------*/
+/* Estilos generales para la sección de proyectos */
+.otro-project-list {
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.otro-project {
+    margin-bottom: 2rem;
+}
+
+.otro-project h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.otro-project p {
+    margin-bottom: 1rem;
+}
+
+.otro-project btn {
+    display: inline-block;
+    margin: 0.5rem 0;
+}
+
+.otro-project btn a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    -webkit-transition: background-color 0.3s ease;
+    -moz-transition: background-color 0.3s ease;
+    -ms-transition: background-color 0.3s ease;
+    -o-transition: background-color 0.3s ease;
+}
+
+.otro-project btn a:hover {
+    background-color: #0056b3;
+}
 
 
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .gallery-item {
+        flex: 1 1 calc(50% - 1rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-item {
+        flex: 1 1 100%;
+    }
+
+    .project h2 {
+        font-size: 1.2rem;
+    }
+}
+
+.otro-header-proyectos{
+    color: #fff;
+    padding: 3rem 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem; /* Añade espacio entre los elementos */
+    height: 350px;
 
 
+}
+
+/* Estilos para la galería de imágenes */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.gallery-item {
+    position: relative;
+    width: 300px; /* Ajusta el ancho según sea necesario */
+    height: 300px; /* Ajusta la altura según sea necesario */
+    border: 2px solid #ddd; /* Borde de la caja */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra de la caja */
+    overflow: hidden; /* Oculta el desbordamiento de la imagen */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para efectos de animación */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit:contain; /* Ajusta la imagen para cubrir el área sin distorsión */
+    transition: transform 0.3s ease; /* Transición para efectos de animación */
+}
+
+.gallery-item:hover {
+    transform: scale(1.05); /* Efecto de escala en hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Efecto de sombra en hover */
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1); /* Efecto de escala en la imagen en hover */
+}
 
 
+/* Responsividad */
+@media (max-width: 1024px) {
+    .gallery-item {
+        width: 250px; /* Ajusta el ancho para tablets */
+        height: 150px; /* Ajusta la altura para tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-item {
+        width: 200px; /* Ajusta el ancho para dispositivos móviles */
+        height: 120px; /* Ajusta la altura para dispositivos móviles */
+    }
+}
+
+@media (max-width: 480px) {
+
+    .otro-header-proyectos{
+        color: #fff;
+        padding: 3rem 2rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem; /* Añade espacio entre los elementos */
+        
+        height: 350px;
+        margin-bottom: 300px;
+        margin-top: 449px;
+    }
+    
+    
+    
+    
+
+    .gallery-item {
+        width: 150px; /* Ajusta el ancho para pantallas muy pequeñas */
+        height: 100px; /* Ajusta la altura para pantallas muy pequeñas */
+    }
+}
